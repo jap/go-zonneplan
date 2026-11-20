@@ -1,0 +1,51 @@
+version: "2"
+# run:
+#   go: "1.26"
+linters:
+  default: none
+  enable:
+    - durationcheck
+    - errcheck
+    - goprintffuncname
+    - govet
+    - importas
+    - ineffassign
+    - makezero
+    - misspell
+    - nolintlint
+    - sqlclosecheck
+    - staticcheck
+    - tparallel
+    - unconvert
+    - unused
+    - wastedassign
+    - whitespace
+  settings:
+    modernize:
+      disable:
+        - embedlit
+        - stringsbuilder
+    staticcheck:
+      checks:
+        - -SA1019
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gci
+    - gofmt
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$

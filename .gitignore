@@ -1,0 +1,4 @@
+.shepherd/
+token.json
+test/
+.#*
